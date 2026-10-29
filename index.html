@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عطور الرحاب | Al Rehab Perfumes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/old-antic" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== Overlay للقائمة الجانبية ===== -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ===== القائمة الجانبية ===== -->
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebarClose" aria-label="إغلاق القائمة">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="logo-sm">عطور الرحاب</div>
+        <nav>
+            <a href="#" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#" data-page="men"><i class="fas fa-male"></i> العطور الرجالية</a>
+            <a href="#" data-page="women"><i class="fas fa-female"></i> العطور النسائية</a>
+            <a href="#" data-page="exclusive"><i class="fas fa-crown"></i> المجموعات الحصرية</a>
+            <a href="#" data-page="gifts"><i class="fas fa-gift"></i> الهدايا</a>
+            <a href="#" data-page="contact"><i class="fas fa-headset"></i> تواصل معنا</a>
+        </nav>
+    </aside>
+
+    <!-- ===== نافذة البحث ===== -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="ابحث عن عطر أو علامة تجارية..." autocomplete="off" />
+                <button id="closeSearch" aria-label="إغلاق البحث"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- ===== الهيدر الثابت ===== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="hamburger" id="hamburgerBtn" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="header-center">
+            <span class="brand-name">عطور الرحاب</span>
+            <div class="monogram">AR</div>
+        </div>
+        <div class="header-right">
+            <button class="icon-btn" id="searchBtn" aria-label="بحث">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="icon-btn" id="cartBtn" aria-label="سلة التسوق">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== الصفحة الرئيسية ===== -->
+        <section class="view active" id="view-home">
+            <section class="hero">
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">THE ART OF LUXURY FRAGRANCE</span>
+                        <h1 class="hero-title">عطور الرحاب</h1>
+                        <p class="hero-slogan">فخامة لا تُضاهى، تعكس شخصيتك</p>
+                        <a href="#" class="hero-btn glass-btn" id="heroShopBtn">تسوق المجموعة</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ribbon-section">
+                <div class="ribbon-track" id="ribbonTrack"></div>
+            </section>
+
+            <section class="story-section">
+                <div class="story-container">
+                    <span class="story-subtitle">OUR STORY</span>
+                    <h2 class="story-title">قصتنا</h2>
+                    <p class="story-text">
+                        علامة تجارية فاخرة ولدت من شغف عميق بالروائح النادرة والفن العطري. كل عطر نصنعه يروي قصة فريدة، تعانق شخصيتك لتترك بصمة لا تُنسى طوال اليوم.
+                    </p>
+                    <a href="#" class="story-btn glass-btn" data-page="contact">اكتشف المزيد</a>
+                </div>
+            </section>
+
+            <div class="filter-section">
+                <div class="filter-pills" id="filterPills">
+                    <button class="pill active" data-filter="all">الكل</button>
+                    <button class="pill" data-filter="men">رجالي</button>
+                    <button class="pill" data-filter="women">نسائي</button>
+                    <button class="pill" data-filter="unisex">يونيسكس</button>
+                </div>
+            </div>
+
+            <section class="products-section" id="homeProductsSection">
+                <div class="products-grid" id="productsGrid"></div>
+            </section>
+        </section>
+
+        <!-- ===== صفحة المجموعات الحصرية ===== -->
+        <section class="view" id="view-exclusive">
+            <div class="page-header">
+                <span class="page-subtitle">EXCLUSIVE COLLECTION</span>
+                <h1 class="page-title">المجموعات الحصرية</h1>
+                <p class="page-desc">عطور نادرة وفريدة من نوعها، مختارة بعناية لمن يبحث عن التميز والاختلاف.</p>
+            </div>
+            <section class="products-section">
+                <div class="products-grid" id="exclusiveGrid"></div>
+            </section>
+        </section>
+
+        <!-- ===== صفحة الهدايا ===== -->
+        <section class="view" id="view-gifts">
+            <div class="page-header">
+                <span class="page-subtitle">GIFT COLLECTION</span>
+                <h1 class="page-title">الهدايا</h1>
+                <p class="page-desc">هدايا فاخرة بلمسة عطرية تترك أثراً لا يُنسى، مثالية لكل مناسبة.</p>
+            </div>
+            <section class="products-section">
+                <div class="products-grid" id="giftsGrid"></div>
+            </section>
+        </section>
+
+        <!-- ===== صفحة تواصل معنا ===== -->
+        <section class="view" id="view-contact">
+            <div class="page-header">
+                <span class="page-subtitle">GET IN TOUCH</span>
+                <h1 class="page-title">تواصل معنا</h1>
+                <p class="page-desc">نسعد بتواصلك معنا، فريقنا جاهز للإجابة على استفساراتك.</p>
+            </div>
+            <section class="contact-section">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>الهاتف</h3>
+                            <p>+967 123 456 789</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@alrehab.com</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>الموقع</h3>
+                            <p>عدن، اليمن</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <h2>أرسل لنا رسالة</h2>
+                        <input type="text" name="name" placeholder="الاسم الكامل" required>
+                        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                        <input type="text" name="subject" placeholder="الموضوع" required>
+                        <textarea name="message" placeholder="اكتب رسالتك هنا..." rows="6" required></textarea>
+                        <button type="submit" class="glass-btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- ===== التذييل ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>عطور الرحاب</h3>
+                <p>فخامة لا تُضاهى، تعكس شخصيتك</p>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <p><i class="fas fa-phone-alt"></i> +967 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@alrehab.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> عدن، اليمن</p>
+            </div>
+            <div class="footer-social">
+                <h4>تابعنا</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 <span>عطور الرحاب</span> — Al Rehab Perfumes. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
